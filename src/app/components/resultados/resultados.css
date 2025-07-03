@@ -1,0 +1,27 @@
+.results-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #fff; /* Borde blanco */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más oscura */
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+@media (max-width: 767px) {
+  .results-container {
+    margin: 20px; /* Margen en modo móvil */
+  }
+}
+
+.results-container h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.results-container p {
+  font-size: 18px;
+  margin: 8px 0;
+  color: #555;
+}
