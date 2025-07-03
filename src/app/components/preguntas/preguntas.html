@@ -1,1 +1,17 @@
-<p>preguntas works!</p>
+<div class="container">
+  <div *ngIf="!testFinalizado">
+    <h2 *ngIf="preguntaActual">{{ preguntaActual.texto }}</h2>
+    <div class="options-container">
+      <button *ngFor="let opcion of preguntaActual?.opciones" (click)="seleccionarOpcion(opcion.temperamento)">
+        {{ opcion.texto }}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="testFinalizado" class="results-container">
+    <h2>Resultados del Test de Temperamentos</h2>
+    <div *ngFor="let temperamento of (resultados | keyvalue)">
+      <p>{{ temperamento.key | titlecase }}: {{ temperamento.value | number:'1.0-0' }}%</p>
+    </div>
+  </div>
+</div>
