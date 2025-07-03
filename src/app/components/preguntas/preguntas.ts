@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { PreguntasService } from '../../services/preguntas';
 
 @Component({
@@ -7,6 +7,10 @@ import { PreguntasService } from '../../services/preguntas';
   templateUrl: './preguntas.html',
   styleUrl: './preguntas.css'
 })
-export class Preguntas {
+export class Preguntas implements OnInit {
   preguntasService = inject(PreguntasService);
+
+  ngOnInit() {
+    console.log(this.preguntasService.getPreguntas());
+  }
 }
